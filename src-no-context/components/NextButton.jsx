@@ -1,8 +1,6 @@
 import React from "react";
-import { useQuiz } from "../context/QuizContext";
 
-const NextButton = () => {
-  const { index, numQuestions, answer, dispatch } = useQuiz()
+const NextButton = ({ index, numQuestions, answer, dispatch }) => {
   const hasAnswer = answer !== null;
   return (
     <>

@@ -1,7 +1,6 @@
-import { useQuiz } from "../context/QuizContext";
+import React from "react";
 
-const FinshScreen = () => {
-  const { points, maxPoints, highscore, dispatch } = useQuiz();
+const FinshScreen = ({ points, maxPoints, highscore, dispatch }) => {
   const percentage = (points / maxPoints) * 100;
   let emoji;
 
@@ -19,12 +18,7 @@ const FinshScreen = () => {
       <p className="highscore">
         (Highscore: <strong>{highscore}</strong> points)
       </p>
-      <button
-        className="btn btn-ui"
-        onClick={() => dispatch({ type: "restart" })}
-      >
-        Restart Quiz
-      </button>
+      <button className="btn btn-ui" onClick={() => dispatch({type: 'restart'})}>Restart Quiz</button>
     </>
   );
 };

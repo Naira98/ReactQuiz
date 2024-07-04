@@ -1,10 +1,7 @@
 import React from "react";
-import { useQuiz } from "../context/QuizContext";
 
-const Questions = () => {
-  const { questions, index, dispatch, answer } = useQuiz();
-  const question = questions[index];
-
+const Questions = ({ question, numQuestions, index, dispatch, answer }) => {
+  console.log(question);
   const hasAnswer = answer !== null;
   return (
     <div>
@@ -27,6 +24,7 @@ const Questions = () => {
           </button>
         ))}
       </div>
+      
     </div>
   );
 };
