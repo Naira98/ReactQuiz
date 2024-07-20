@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import useAPI from "../hooks/useAPI";
 
 const QuizContext = createContext();
@@ -35,7 +35,7 @@ const render = (state, action) => {
         status: "active",
         remaingSeconds: state.questions.length * SECS_PER_QUESTION,
       };
-    case "getAnswer":
+    case "getAnswer": {
       const question = state.questions.at(state.index);
       return {
         ...state,
@@ -45,6 +45,7 @@ const render = (state, action) => {
             ? state.points + question.points
             : state.points,
       };
+    }
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
     case "finished":

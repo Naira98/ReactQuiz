@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useQuiz } from "../context/QuizContext";
 
 const Timer = () => {
@@ -12,7 +12,7 @@ const Timer = () => {
     return () => {
       clearInterval(id);
     };
-  }, []);
+  }, [dispatch]);
   return (
     <div className="timer">
       {mins <= 9 && "0"}

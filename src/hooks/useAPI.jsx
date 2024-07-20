@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useQuiz } from '../context/QuizContext';
 
 const useAPI = (path, successType, FailedType) => {
@@ -7,8 +7,8 @@ const useAPI = (path, successType, FailedType) => {
         fetch(`http://localhost:8000/${path}`)
           .then((res) => res.json())
           .then((data) => dispatch({ type: `${successType}`, payload: data }))
-          .catch((err) => dispatch({ type: `${FailedType}` }));
-      }, []);
+          .catch(() => dispatch({ type: `${FailedType}` }));
+      }, [FailedType, successType, dispatch, path ]);
   return null
 }
 

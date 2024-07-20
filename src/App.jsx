@@ -9,8 +9,9 @@ import FinshScreen from "./components/FinshScreen";
 import NextButton from "./components/NextButton";
 import Timer from "./components/Timer";
 import Footer from "./components/Footer";
-import { useQuiz } from "./context/QuizContext";
 import "./App.css";
+
+import { useQuiz } from "./context/QuizContext";
 
 const App = () => {
   const { status } = useQuiz();

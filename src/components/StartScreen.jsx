@@ -1,4 +1,3 @@
-import React from 'react'
 import { useQuiz } from '../context/QuizContext'
 
 const StartScreen = () => {
@@ -7,7 +6,7 @@ const StartScreen = () => {
     <div className='start'>
         <h2>Welcome to the React Quiz!</h2>
         <h3>{numQuestions} questions to test the React mastery</h3>
-        <button className='btn btn-ui' onClick={() => dispatch({type: 'active'})}>Let's Start</button>
+        <button className='btn btn-ui' onClick={() => dispatch({type: 'active'})}>Let&apos;s Start</button>
     </div>
   )
 }
